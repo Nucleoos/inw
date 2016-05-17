@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="cidade_1" model="l10n_br_base.city">
+            <field name="name">Exterior</field>
+            <field name="ibge_code">99999</field>
+            <field name="state_id" ref="di.estado_1"></field>
+        </record>
+        
+    </data>
+</openerp>

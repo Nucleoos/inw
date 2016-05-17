@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Invoice Line views -->
+		<record model="ir.ui.view" id="desconto_valor_invoice">
+			<field name="name">account.invoice.line.descontozao</field>
+			<field name="model">account.invoice.line</field>
+			<field name="inherit_id" ref="l10n_br_account.view_l10n_br_account_invoice_line_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='General']/group/group/field[@name='discount']" position="after">
+					<field name="desconto" on_change="on_change_desconto(desconto, discount)"/>
+				</xpath>
+				<xpath expr="//page[@string='General']/group/group/field[@name='discount']" position="attributes">
+					<attribute name="on_change">on_change_discount(desconto, discount)</attribute>
+				</xpath>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

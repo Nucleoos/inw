@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record model="ir.ui.view" id="view_config_partner_form">
+      <field name="name">config.partner.form</field>
+      <field name="model">boleto.partner_config</field>
+      <field name="arch" type="xml">
+      	<form string="Instruções" version="7.0">
+	       	<div class="oe_edit_only">
+				(
+				<field name="default_boleto" class="oe_inline"/>
+				<label for="default_boleto" string="Default?"/>
+				)
+			</div>
+      		<group>
+	       		<field name="name"/>
+	       		<field name="carteira"/>
+	       		<field name="preferencia"/>
+       		</group>
+       		<separator string="Instruções" colspan="4"/>
+       		
+       		<label for="instrucoes" string="Alterar valores de Multa, Mora por variaveis @multa e @mora!"/>
+       		<field name="instrucoes" colspan="4" nolabel="1"/>
+  		</form>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_config_partner_tree">
+      <field name="name">boleto.partner_config</field>
+      <field name="model">boleto.partner_config</field>
+      <field name="arch" type="xml">
+        <tree string="Configuração de Boleto">
+		    <field name="default_boleto"/>
+        	<field name="name"/>
+        	<field name="carteira"/>
+        	<field name="preferencia"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="action_config_partner" model="ir.actions.act_window">
+            <field name="name">Configuração de Boleto</field>
+            <field name="res_model">boleto.partner_config</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_config_partner_tree"/>
+    </record>
+		
+	<menuitem string="Configuração de Boleto" id="menu_config_boleto" parent="base.menu_base_config" action="action_config_partner" sequence="20" groups="base.group_sale_manager"/>
+    
+  </data>
+</openerp>

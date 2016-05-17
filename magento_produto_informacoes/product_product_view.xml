@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+    	<record id="product_product_demonstrativo_magento" model="ir.ui.view">
+			<field name="model">product.product</field>
+      		<field name="inherit_id" ref="product.product_normal_form_view"/>
+      		<field name="arch" type="xml">
+				
+				<notebook position="inside">
+					<page string="Inf. Magento">
+						
+						<group>
+							<field name="desconto_avista" readonly="1"/>
+							<field name="custo_em_real" readonly="1"/>
+							<field name="dolar_hoje" readonly="1"/>
+							<field name="tdcartao" readonly="1"/>
+							<field name="juroscartao" readonly="1"/>
+							<field name="tipojuroscartao" readonly="1"/>
+							<field name="valorminimoparcela" readonly="1"/>
+							<field name="placatipo" readonly="1"/>
+							<field name="fabricante" readonly="1"/>
+							<field name="numerodeportas" readonly="1"/>
+							<field name="color" readonly="1"/>
+							<field name="tiposlot" readonly="1"/>
+							<field name="modelo" readonly="1"/>
+							<field name="telefone_tipo" readonly="1"/>
+						</group>
+					
+					</page>
+				</notebook>
+				
+			</field>
+		</record>
+    
+    </data>
+</openerp>

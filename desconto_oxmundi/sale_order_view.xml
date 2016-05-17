@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="desconto_valor_sale" model="ir.ui.view">
+			<field name="name">sale.order.desconto</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+                     
+				<xpath expr="//form[@string='Sales Order Lines']/group/group" position="inside">
+					<field name="desconto" on_change="on_change_desconto(desconto, discount)"/>
+				</xpath>
+				
+				<xpath expr="//form[@string='Sales Order Lines']/group/group/div[@name='discount']/field[@name='discount']" position="attributes">
+					<attribute name="on_change">on_change_discount(desconto, discount)</attribute>
+				</xpath>
+				
+			</field>
+		</record>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</data>
+</openerp>

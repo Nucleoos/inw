@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_l10n_br_base_partner_form_info">
+			<field name="name">l10n_br_base.partner.form.info</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="l10n_br_base.view_l10n_br_base_partner_form" />
+			<field name="arch" type="xml">
+				<field name="country_id" position="attributes">
+				    <attribute name="on_change">onchange_country(country_id)</attribute>
+				</field>
+				<field name="country_id" position="after">
+					<field name="only" invisible="1"/>
+				</field>
+				<field name="state_id" position="attributes">
+					<attribute name="attrs">{'readonly': [('only','=',True)]}</attribute>				
+				</field>
+				<field name="l10n_br_city_id" position="attributes">
+					<attribute name="attrs">{'readonly': [('only','=',True)]}</attribute>				
+				</field>
+				
+				<label for="cnpj_cpf" string="CPF" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('is_company','=', True), ('only', '=', True)]}</attribute>
+				</label> 
+				
+				<label for="cnpj_cpf" string="CNPJ" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('is_company','=', False), ('only', '=', True)]}</attribute>
+				</label>
+				
+				<label for="cnpj_cpf" string="CPF" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('is_company','=', True), ('only', '=', True)]}</attribute>
+				</label> 
+				
+				<label for="cnpj_cpf" string="CNPJ" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('is_company','=', False), ('only', '=', True)]}</attribute>
+				</label>
+				
+				<label for="cnpj_cpf" string="CNPJ" position="after">
+					<label for="cnpj_cpf" string="Codigo Fornecedor Estrangeiro" attrs="{'invisible': [('only','=', False)]}"/>
+				</label>
+				
+				<field name="cnpj_cpf" position="attributes">
+					<attribute name="on_change">onchange_mask_cnpj_cpf(is_company, cnpj_cpf, context)</attribute>
+			        <attribute name="context">{'only': only}</attribute>
+				</field>
+				
+				<field name="is_company" position="attributes">
+					<attribute name="on_change">onchange_mask_cnpj_cpf(is_company, cnpj_cpf, context)</attribute>
+			        <attribute name="context">{'only': only}</attribute>
+				</field>
+				
+				<field name="street" position="attributes">
+					<attribute name="attrs">{'required': [('only', '=', True)]}</attribute>
+					<attribute name="placeholder">Rua</attribute>
+				</field>
+				
+				<field name="district" position="attributes">
+					<attribute name="attrs">{'required': [('only', '=', True)]}</attribute>
+				</field>
+				
+				<field name="number" position="attributes">
+					<attribute name="attrs">{'required': [('only', '=', True)]}</attribute>
+				</field>
+			</field>
+		</record>	
+	
+	</data>
+</openerp>

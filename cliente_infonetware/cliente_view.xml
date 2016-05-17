@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+<!--
+		<record id="infonetware_view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="magentoerpconnect.view_partner_form" />
+            <field name="arch" type="xml">
+
+               	<field name="parent_id" position="before">
+					<group colspan="4" attrs="{'invisible': [('cpf_cpf_invalido', '=', False)]}">
+                       	<div>
+                           	<label for="cpf_cpf_invalido" string="CPF/CNPJ Invalido"/>
+                        </div>
+						<field colspan="4" name="cpf_cpf_invalido" nolabel="1" readonly="1"/>
+					</group>
+				</field>
+
+                <field name="birthday" position="replace">
+                	<group>
+	                	<label for='birthday' string ="Data de Nascimento" attrs="{'invisible': [('is_company', '=', True)]}"/>
+    	            	<label for='birthday' string ="Data de Constituição" attrs="{'invisible': [('is_company', '=', False)]}"/>
+        	            <field name="birthday" nolabel="1"/>
+        	            <field name="cadastro"/>
+                	</group>
+                </field>
+                <field name="bank_ids" position="replace">
+                <field name="bank_ids" context="{'default_partner_id': active_id, 'form_view_ref': 'base.view_partner_bank_form'}">
+                        <tree string="Bank Details">
+                        	<field name="bank_name"/>
+                        	<field name="bra_number"/>
+                        	<field name="bra_number_dig"/>
+                            <field name="acc_number"/>
+                            <field name="acc_number_dig"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+-->
+
+
+	</data>
+</openerp>

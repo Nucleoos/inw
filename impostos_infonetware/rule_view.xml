@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+<!--
+		<record model="ir.ui.view" id="view_l10n_br_account_fiscal_position_rule_form_infonetware">
+			<field name="name">l10n_br_account.fiscal.position.rule.form.infonetware</field>
+			<field name="model">account.fiscal.position.rule</field>
+			<field name="inherit_id" ref="l10n_br_account.view_l10n_br_account_fiscal_position_rule_form" />
+			<field eval="3" name="priority"/>
+			<field name="arch" type="xml">
+				<field name="from_country" position="replace">
+					<field name="from_country" on_change="onchange_country()"/>
+				</field>
+				<field name="to_invoice_country" position="replace">
+					<field name="to_invoice_country" on_change="onchange_country()"/>
+				</field>
+				<separator string="l10n br" colspan="4" position="replace"/>
+					<field name="partner_fiscal_type_id" position="replace"/>
+					<field name="fiscal_type" position="replace"/>
+					<field name="fiscal_category_id" required="1" position="replace"/>
+					<newline />
+						<separator string="Faixa de Faturamento" colspan="4" position="replace"/>
+						<field  name="revenue_start" position="replace"/>
+						<field  name="revenue_end" position="replace"/>
+					<field name="fiscal_position_id" position="replace">
+					<field name="fiscal_position_id" domain="[('fiscal_category_id', '=', fiscal_category_id)]" position="replace"/>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_l10n_br_account_fiscal_position_rule_form_infonetware2">
+			<field name="name">l10n_br_account.fiscal.position.rule.form.infonetware</field>
+			<field name="model">account.fiscal.position.rule</field>
+			<field name="inherit_id" ref="l10n_br_account.view_l10n_br_account_fiscal_position_rule_form" />
+			<field eval="3" name="priority"/>
+			<field name="arch" type="xml">
+				<field name="vat_rule" position="after">
+					<separator string="l10n br" colspan="4" />
+					<field name="partner_fiscal_type_id" />
+					<field name="fiscal_type" />
+					<field name="fiscal_category_id" required="1" />
+					<newline />
+					<group colspan="4" attrs="{'invisible': [('fiscal_type', '=', '3')]}">
+						<separator string="Faixa de Faturamento" colspan="4" />
+						<field attrs="{'required': [('fiscal_type', '=', '3')]}" name="revenue_start" />
+						<field attrs="{'required': [('fiscal_type', '=', '3')]}" name="revenue_end" />
+					</group>
+				</field>
+				<field name="fiscal_position_id" position="replace">
+					<field name="fiscal_position_id" domain="[('fiscal_category_id', '=', fiscal_category_id)]"/>
+				</field>
+			</field>
+		</record>
+-->
+
+	</data>
+</openerp>

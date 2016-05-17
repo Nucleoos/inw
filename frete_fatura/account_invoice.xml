@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+<!--
+		<record model="ir.ui.view" id="view_l10n_br_account_invoice_frete">
+			<field name="name">l10n_br_account.invoice.form.frete</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="l10n_br_account_product.l10n_br_account_product_invoice_form" />
+			<field name="arch" type="xml">
+				<field name="number_of_packages" position="after">
+					<field name="frete_fatura"/>
+					<field name="valor_frete" attrs="{'invisible':[('frete_fatura','=',False)]}" on_change="onchange_frete(valor_frete,frete_fatura)"/>
+				</field>
+			<field name="currency_id" position="after">
+				<group>
+					<field name="vendedor"/>
+				</group>
+			</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_l10n_br_account_supplier_invoice_frete">
+			<field name="name">l10n_br_account.invoice.form.supplier.frete</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="l10n_br_account_product.l10n_br_account_product_invoice_form" />
+			<field name="arch" type="xml">
+				<field name="number_of_packages" position="after">
+					 <button name="invoice_cancel" states="draft,proforma2,sale,sefaz_export,sefaz_exception,open" string="Cancel Invoice" groups="account.group_account_invoice"/>
+					<field name="frete_fatura"/>
+					<field name="valor_frete" attrs="{'invisible':[('frete_fatura','=',False)]}" on_change="onchange_frete(valor_frete,frete_fatura)"/>
+				</field>
+				<field name="currency_id" position="after">
+					<group>
+						<field name="vendedor"/>
+					</group>
+				</field>
+			</field>
+		</record>
+-->
+
+
+	</data>
+</openerp>

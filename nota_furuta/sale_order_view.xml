@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    
+        <record id="sale_order_fatura_futura" model="ir.ui.view">
+            <field name="name">sale.order.fatura.futura</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+            
+                <header position="inside">
+                	<button name="cria_fatura_futura" string="Criar Fatura Futura" type="object" attrs="{'invisible': ['|', ('state', '!=', 'progress'), '|', ('order_policy', '!=', 'nota_futura'), ('nota_futura_emitida', '=', True)]}"/>
+                </header>
+                
+                <field name="name" position="after">
+                	<field name="nota_futura_emitida" invisible="1"/>
+                </field>
+               
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

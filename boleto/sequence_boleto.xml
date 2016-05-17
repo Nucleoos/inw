@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_sequece_boleto_form">
+		      <field name="name">sequence.boleto</field>
+		      <field name="model">sequence.boleto</field>
+		      <field name="arch" type="xml">
+		        <form string="Sequencia Numerica Boleto">
+		        	<field name="name" colspan="4"/>
+		        	<field name="qtd"/>
+		        	<field name="proximo_numero"/>
+<!-- 		        	<field name="company_id"/> -->
+		        </form>
+		      </field>
+    	</record>
+    
+    <record model="ir.ui.view" id="view_sequece_boleto_tree">
+      <field name="name">sequence.boleto</field>
+      <field name="model">sequence.boleto</field>
+      <field name="arch" type="xml">
+        <tree string="Sequencia Numerica Boleto">
+        	<field name="name" colspan="4"/>
+        	<field name="qtd"/>
+        	<field name="proximo_numero"/>
+<!-- 		    <field name="company_id"/> -->
+        </tree>
+      </field>
+    </record>
+    
+    <record id="action_sequence_boleto" model="ir.actions.act_window">
+            <field name="name">Sequencia Boleto</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sequence.boleto</field>
+            <field name="view_id" ref="view_sequece_boleto_tree"/>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+        
+     <menuitem id="menu_sequence_boleto" name="Sequencia Numerica Boleto" parent="base.menu_config"
+            sequence="98" action="action_sequence_boleto" />
+		
+            
+   	</data>
+</openerp>

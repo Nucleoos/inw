@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record id="bandeiras_tree" model="ir.ui.view">
+			<field name="name">bandeira.tree</field>
+			<field name="model">cartao.bandeira</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Bandeiras de Cartões" version='7.0'>
+					<field name="name"/>
+					<field name="reference"/>
+					<field name="write_date_taxa"/>
+					<field name="write_uid_taxa"/>
+					
+				</tree>
+			</field>
+		</record>
+		
+		<record id="bandeiras_view" model="ir.ui.view">
+			<field name="name">bandeiras.form</field>
+			<field name="model">cartao.bandeira</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Bandeiras de Cartões" version='7.0'>
+					<div>
+						<group>
+							<field name="name"/>
+							<field name="reference"/>
+						</group>
+						<separator colspan='4'/>
+						<group>
+				            <group>
+					             <field name="write_date_taxa" readonly='1'/>
+				            </group>
+				            <group>
+					             <field name="write_uid_taxa" readonly="1"/>
+				            </group>
+						</group>
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="view_bandeiras_cartao_action">
+                <field name="name">Bandeiras de cartões</field>
+                <field name="res_model">cartao.bandeira</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">tree,form</field>                  
+        </record>
+        
+	</data>
+</openerp>

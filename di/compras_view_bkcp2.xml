@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="l10n_br_purchase_order_line_form_di">
+			<field name="name">l10n_br_purchase.order.line.form.di</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form"/>
+			<field name="arch" type="xml">
+<!-- 				<field name="price_unit" position="attributes"> -->
+<!-- 					<attribute name="on_change">onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)</attribute> -->
+<!-- 				</field> -->
+				<notebook position="inside">
+					<page string="Declaração de Importação">
+						<group>
+							<group>
+								<field name="valor_unit_dolar" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="valor_proforma" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="data_proforma"/>
+								<field name="cotacao_proforma"/>
+							</group>
+							<group>
+								<field name="cambio"/>
+								<field name="data_cambio"/>
+								<field name="cotacao_cambio"/>
+							</group>
+							<group>
+								<field name="di_adicao" on_change="onchange_taxa(di_adicao)"/>
+								<field name="taxa_siscomex"/>
+								<field name="cotacao_cambio_di"/>
+								<field name="data_di"/>
+							</group>
+							<group>
+								<field name="armazenagem" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="documento" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="carregamento" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="despachante" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+								<field name="outras_despesas" on_change="onchange_unit(product_qty, price_unit, taxa_siscomex, armazenagem, documento, carregamento, despachante, outras_despesas, valor_proforma, cotacao_cambio_di, taxes_id, valor_unit_dolar)"/>
+							</group>
+							<group>
+								<field name="pis"/>
+								<field name="base_pis" invisible="1"/>
+								<field name="cofins"/>
+								<field name="base_cofins" invisible="1"/>
+								<field name="ii"/>
+								<field name="base_ii" invisible="1"/>
+								<field name="ipi"/>
+								<field name="base_ipi" invisible="1"/>
+								<group>
+									<field name="icms_p"/>
+									<field name="icms_s"/>
+									<field name="icms"/>				
+								</group>
+							</group>
+							<group>
+								<field name="valor_total"/>
+							</group>
+						</group>
+					</page>
+				</notebook>
+			</field>
+		</record>
+        
+	<record model="ir.ui.view" id="view_taxa_siscomex">
+	      <field name="name">taxa.siscomex</field>
+	      <field name="model">tabela.siscomex</field>
+	      <field name="arch" type="xml">
+	        <tree string="Taxa Siscomex">
+			    <field name="adicoes"/>
+	        	<field name="valor"/>
+	        </tree>
+	      </field>
+	    </record>
+	    
+	    <record model="ir.ui.view" id="view_taxa_siscomex_form">
+	      <field name="name">taxa.siscomex</field>
+	      <field name="model">tabela.siscomex</field>
+	      <field name="arch" type="xml">
+	        <form string="Taxa Siscomex">
+			    <field name="adicoes"/>
+	        	<field name="valor"/>
+	        </form>
+	      </field>
+	    </record>
+	    
+	    <record id="action_taxa_siscomex" model="ir.actions.act_window">
+	            <field name="name">Taxa de Siscomex</field>
+	            <field name="res_model">tabela.siscomex</field>
+	            <field name="view_mode">tree,form</field>
+	            <field name="view_type">form</field>
+	            <field name="view_id" ref="view_taxa_siscomex"/>
+	    </record>
+			
+		
+	</data>
+</openerp>						
+

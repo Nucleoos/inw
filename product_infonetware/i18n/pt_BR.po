@@ -1,0 +1,60 @@
+# Brazilian Portuguese translation for openobject-addons
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+#. module: product
+#: field:product.product,incoming_qty:0
+msgid "Incoming"
+msgstr "À Receber"
+
+
+#. module: product
+#: field:product.product,outgoing_qty:0
+msgid "Outgoing"
+msgstr "Saidas"
+
+
+#. module: product
+#: field:product.product,virtual_available:0
+msgid "Forecasted Quantity"
+msgstr "Quantidade Prevista"
+
+
+#. module: product
+#: field:product.product,qty_available:0
+msgid "Quantity On Hand"
+msgstr "Estoque Fisico"
+
+
+#. module: product
+#: field:product.product,code:0
+#: field:product.product,default_code:0
+msgid "Internal Reference"
+msgstr "Código Interno"
+
+#. module: stock
+#: field:stock.production.lot,ref:0
+msgid "Internal Reference"
+msgstr "Código Interno"
+
+#. module: sale
+#: field:sale.order,client_order_ref:0
+msgid "Customer Reference"
+msgstr "Código Interno Cliente"
+
+
+#. module: base
+#: field:res.partner,ref:0
+msgid "Reference"
+msgstr "Código Interno Cliente"
+
+#. module: account_product_fiscal_classification
+#: field:product.product,property_fiscal_classification:0
+msgid "Fiscal Classification"
+msgstr "NCM"
+
+#. module: product
+#: field:product.packaging,ean:0
+msgid "EAN"
+msgstr "EAN13 Embalagens"

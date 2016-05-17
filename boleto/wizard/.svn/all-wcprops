@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/usvn/public/svn/I-Conecta/!svn/ver/3/trunk/iconecta/modulo/iconecta_boleto/wizard
+END
+boleto_create_view.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/usvn/public/svn/I-Conecta/!svn/ver/3/trunk/iconecta/modulo/iconecta_boleto/wizard/boleto_create_view.xml
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/usvn/public/svn/I-Conecta/!svn/ver/3/trunk/iconecta/modulo/iconecta_boleto/wizard/__init__.py
+END
+boleto_create.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/usvn/public/svn/I-Conecta/!svn/ver/3/trunk/iconecta/modulo/iconecta_boleto/wizard/boleto_create.py
+END

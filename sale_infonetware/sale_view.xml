@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="sale_order_view_form_info" model="ir.ui.view">
+            <field name="name">sale_automatic_workflow.sale_order.view_form.info</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_payment_method.sale_order_view_form" />
+            <field name="arch" type="xml">
+                <field name="payment_method_id" position="replace">
+                	<field name="payment_method_id"
+                              on_change="onchange_payment_method_id(payment_method_id)" string="Metodo de Pagamento"/>
+                </field>
+               
+            </field>
+        </record>
+        
+        <record id="sale_order_view_form_info3" model="ir.ui.view">
+            <field name="name">sale_order.view_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_automatic_workflow.sale_order_view_form" />
+            <field name="arch" type="xml">
+                <field name="workflow_process_id" position="replace">
+                    <field name="workflow_process_id" string="Processos"
+                        on_change="onchange_workflow_process_id(workflow_process_id)"/>
+                </field>
+                <!-- <field name="canceled_in_backend" position="replace">
+                	<field name="canceled_in_backend" string="Cancelar no Beckend"/>
+                </field> -->
+            </field>
+        </record>
+        
+        <record id="sale_order_view_form_info4" model="ir.ui.view">
+            <field name="name">sale_order.view_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <field name="pricelist_id" position="after">
+                	<field name="boleto" on_change="onchange_boleto(boleto)"/>
+                	<field name="vencimento" attrs="{'invisible':[('boleto', '=', False)],'required':[('boleto','=',True)]}"/>
+                	<field name="banco" attrs="{'invisible':[('boleto', '=', False)],'required':[('boleto','=',True)]}"/>
+                </field>
+            </field>
+        
+	</record>        
+    </data>
+</openerp>
+

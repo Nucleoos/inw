@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="inherit_account_invoice">
+			<field name="name">Boleto</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<notebook position='inside'>
+					<page string="Boletos" on_change="onchange(id,date_due)">	
+							<group>
+								<button icon="gtk-ok" name="cria_boleto_itau" string="Boleto  Itau" type="object" />
+								<button icon="gtk-ok" name="cria_boleto_cef" string="Boleto BRB" type="object" />
+								<button icon="gtk-ok" name="cria_boleto_brasil" string="Boleto B.B." type="object" />
+							</group>
+							<group>
+								<field name="vencimento"/>
+								<field name="file_itau" filename="file_name" readonly='1' />
+								<field name="file_cef" filename="file_name" readonly='1' string="Banco BRB"/>
+								<field name="file_bb" filename="file_name" readonly='1'/>
+							</group>
+					</page>
+				</notebook>
+				<field name="period_id" position="attributes">
+					<attribute name="groups">account.group_account_manager</attribute>					
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

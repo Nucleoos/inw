@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="l10n_br_account_product_invoice_form_nf3" model="ir.ui.view">
+			<field name="name">l10n_br_account_product.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+                <field name="date_invoice" position="after">
+					<field name="date_hour_invoice" string="Data Emissão"/>
+                    <field name="date_in_out" string="Data de Entrada/Saida"/>
+                    <field name="nfe_version" string="Versão da Nfe"/>
+                    <field name="dest_id"/>
+                </field>
+                <xpath expr="//field[@name='fiscal_position']" position="after">
+                    <field name="ind_final" string="Operação com Consumidor final" attrs="{'required': [('nfe_version', '>', '3.00')]}"/>
+                    <field name="ind_pres" string="Tipo de operação" attrs="{'required': [('nfe_version', '>', '3.00')]}"/>
+                </xpath>
+			</field>
+		</record>
+		
+		<record id="l10n_br_account_product_position_form_nf3" model="ir.ui.view">
+			<field name="name">l10n_br_account_product.fiscal.position.form</field>
+			<field name="model">account.fiscal.position</field>
+			<field name="inherit_id" ref="l10n_br_account.l10n_br_account_position_form"/>
+			<field name="arch" type="xml">
+				<field name="fiscal_category_fiscal_type" position="after">
+  	              <field name="id_dest" colspan="4"/>
+				</field>
+			</field>
+		</record>
+
+	</data>
+
+</openerp>

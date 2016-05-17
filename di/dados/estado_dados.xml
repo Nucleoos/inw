@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="estado_1" model="res.country.state">
+            <field name="name">Exterior</field>
+            <field name="code">99</field>
+            <field name="country_id">1</field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="inherited_account_journal_form">
+			<field name="name">Diário</field>
+			<field name="model">account.journal</field>
+			<field name="inherit_id" ref="account.view_account_journal_form"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<field name="default_credit_account_id" position="after">
+					<field name="banco_id"/>
+					<field name="conta_taxa_id"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

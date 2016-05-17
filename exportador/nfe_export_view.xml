@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="nfee_export_view_form" model="ir.ui.view">
+			<field name="name">nfee.export.form</field>
+			<field name="model">nfee.export</field>
+			<field name="arch" type="xml">
+				<form string="NF-e formulário" version="7.0">
+					<group>
+						<separator string="Periodo" colspan="4"/>
+						<group col="4">
+							<field name="de" colspan="2" required="1"/>
+							<field name="ate" colspan="2" required="1"/>
+						</group>
+						<group colspan="4">
+							<separator string="Empresa e Situação" colspan="4"/>
+							<field name="empresa_id" colspan="2" nolabel="1" required="1"/>
+							<field name="state" colspan="2" nolabel="1" required="1"/>
+						</group>
+					</group>
+					<footer>
+						<button string="Gerar" type="object" name="gerar"/>
+						ou
+						<button special="cancel" string="Cancelar" class="oe_link"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_nfee_export" model="ir.actions.act_window">
+			<field name="name">NF-e Export</field>
+			<field name="res_model">nfee.export</field>
+			<field name="view_id" ref="nfee_export_view_form" />
+			<field name="view_mode">form</field>
+			<field name="view_type">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		
+	<menuitem id="exportar_dados_nfe" name="Export NF-e Dados" action="action_nfee_export"/>
+	
+	
+	</data>
+</openerp>

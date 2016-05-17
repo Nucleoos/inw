@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record id="view_ncm_aliquota_tree_new" model="ir.ui.view">
+            <field name="name">ncm.aliquota.tree.new</field>
+            <field name="model">account.product.fiscal.classification</field>
+            <field name="type">form</field>
+            <field name="priority">20</field>
+            <field name="inherit_id" ref="account_product_fiscal_classification.fiscal_classification_normal_form_view_tree"/>
+            <field name="arch" type="xml">
+            	<field name="description" position="after">
+            		<field name="aliq_nac_federal"/>
+            		<field name="aliq_imp_federal"/>
+			<field name="aliq_estadual"/>
+			<field name="aliq_municipal"/>
+             	</field>      
+           	</field>    			
+		</record>
+		
+		
+		<record id="view_ncm_aliquota_form_new" model="ir.ui.view">
+            <field name="name">ncm.aliquota.form.new</field>
+            <field name="model">account.product.fiscal.classification</field>
+            <field name="type">form</field>
+            <field name="priority">20</field>
+            <field name="inherit_id" ref="account_product_fiscal_classification.fiscal_classification_normal_form_view_form"/>
+            <field name="arch" type="xml">
+            	<field name="note" position="after">
+            		<separator string="Aliquotas Total de Imposto" colspan="4"/>
+	            		<field name="aliq_nac_federal"/>
+	            		<field name="aliq_imp_federal"/>
+                       		<field name="aliq_estadual"/>
+                        	<field name="aliq_municipal"/>
+             	</field>      
+           	</field>    			
+		</record>
+		
+	
+	</data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+   <data>
+        <record id="product_product_form" model="ir.ui.view">
+            <field name="name">product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="iconecta_novo_contrato.view_account_product_costs"/>
+            <field name="arch" type="xml">
+	            <label for="categ_id" position="before">
+		            <label for="billet_name"/>
+	            	<h2>
+			            <field name="billet_name"/>
+	            	</h2>
+           	 	</label>
+           	 	<label for="ean13" position="replace">
+           	 		<label for="ean13" invisible="1"/>
+           	 	</label>
+            	<field name="ean13" position="replace">
+            		<field name="ean13" invisible="1"/>
+            	</field>
+            	<field name="default_code" position="after">
+            		<field name="produto_multa" attrs="{'invisible':[('fiscal_type','=','product')]}"/>
+            	</field>
+            </field>	
+        </record>
+    </data>
+</openerp>
